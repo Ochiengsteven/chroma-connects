@@ -1,37 +1,38 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-ruby "3.2.2"
+ruby '3.2.2'
 
-gem "rails", "~> 7.1.2"
+gem 'rubocop', '>= 1.0', '< 2.0'
 
-gem "sprockets-rails"
+gem 'rails', '~> 7.1.2'
 
-gem "pg", "~> 1.1"
+gem 'sprockets-rails'
 
-gem "puma", ">= 5.0"
+gem 'pg', '~> 1.1'
 
-gem "importmap-rails"
+gem 'puma', '>= 5.0'
 
-gem "turbo-rails"
+gem 'importmap-rails'
 
-gem "stimulus-rails"
+gem 'turbo-rails'
 
-gem "jbuilder"
+gem 'stimulus-rails'
 
-gem "tzinfo-data", platforms: %i[ windows jruby ]
+gem 'jbuilder'
 
-gem "bootsnap", require: false
+gem 'tzinfo-data', platforms: %i[windows jruby]
 
+gem 'bootsnap', require: false
 
 group :development, :test do
-  gem "debug", platforms: %i[ mri windows ]
+  gem 'debug', platforms: %i[mri windows]
 end
 
 group :development do
-  gem "web-console"
+  gem 'web-console'
 end
 
 group :test do
-  gem "capybara"
-  gem "selenium-webdriver"
+  gem 'capybara'
+  gem 'selenium-webdriver'
 end
