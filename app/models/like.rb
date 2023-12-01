@@ -14,8 +14,4 @@ class Like < ApplicationRecord
   def decrement_post_likes_counter
     post.decrement!(:likes_counter)
   end
-
-  # def update_post_likes_counter
-  #   post.update(likes_counter: post.likes.count)
-  # end
 end
