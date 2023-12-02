@@ -18,6 +18,8 @@ gem 'turbo-rails'
 
 gem 'stimulus-rails'
 
+gem 'faker'
+
 gem 'jbuilder'
 
 gem 'tzinfo-data', platforms: %i[windows jruby]
@@ -35,4 +37,8 @@ end
 group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
+end
+
+group :development, :test do
+  gem 'rspec-rails'
 end
