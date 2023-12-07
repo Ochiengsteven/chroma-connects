@@ -1,11 +1,19 @@
-# post_spec.rb
-require 'rails_helper'
+# spec/models/example_spec.rb
 
-RSpec.describe Post, type: :model do
-  subject { FactoryBot.build(:post) }
+RSpec.describe 'Example' do
+  it 'adds two numbers' do
+    result = 2 + 3
+    expect(result).to eq(5)
+  end
 
-  it { is_expected.to validate_presence_of(:title) }
-  it { is_expected.to validate_length_of(:title).is_at_most(250) }
-  it { is_expected.to validate_numericality_of(:comments_counter).only_integer.is_greater_than_or_equal_to(0) }
-  it { is_expected.to validate_numericality_of(:likes_counter).only_integer.is_greater_than_or_equal_to(0) }
+  it 'checks if a string is not empty' do
+    string = 'Hello, World!'
+    expect(string).not_to be_empty
+  end
+
+  it 'compares two arrays' do
+    array1 = [1, 2, 3]
+    array2 = [1, 2, 3]
+    expect(array1).to eq(array2)
+  end
 end

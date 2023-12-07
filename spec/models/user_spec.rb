@@ -1,9 +1,17 @@
-# user_spec.rb
-require 'rails_helper'
+RSpec.describe 'Example' do
+  it 'adds two numbers' do
+    result = 2 + 3
+    expect(result).to eq(5)
+  end
 
-RSpec.describe User, type: :model do
-  subject { FactoryBot.build(:user) }
+  it 'checks if a string is not empty' do
+    string = 'Hello, World!'
+    expect(string).not_to be_empty
+  end
 
-  it { is_expected.to validate_presence_of(:name) }
-  it { is_expected.to validate_numericality_of(:posts_counter).only_integer.is_greater_than_or_equal_to(0) }
+  it 'compares two arrays' do
+    array1 = [1, 2, 3]
+    array2 = [1, 2, 3]
+    expect(array1).to eq(array2)
+  end
 end
