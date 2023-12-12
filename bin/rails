@@ -1,4 +1,18 @@
-#!/usr/bin/env ruby.exe
-APP_PATH = File.expand_path("../config/application", __dir__)
-require_relative "../config/boot"
-require "rails/commands"
+describe 'GET /show' do
+    before do
+      user_post = create_post(user)
+      get user_post_path(user.id, user_post.id)
+    end
+
+    it 'renders a successful response' do
+      expect(response).to be_successful
+    end
+
+    it 'renders the correct template' do
+      expect(response).to render_template('show')
+    end
+
+    it 'includes correct placeholder text in the response body' do
+      expect(response.body).to include('<h2>Post for a user</h2>')
+    end
+  end

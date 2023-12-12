@@ -22,6 +22,8 @@ gem 'faker'
 
 gem 'jbuilder'
 
+gem 'rails-controller-testing'
+
 gem 'tzinfo-data', platforms: %i[windows jruby]
 
 gem 'bootsnap', require: false
