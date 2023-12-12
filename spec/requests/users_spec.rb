@@ -19,4 +19,20 @@ RSpec.describe 'Users', type: :request do
       expect(response.body).to include('<h1>All Users</h1>')
     end
   end
+
+  describe 'GET /show' do
+    before { get user_url(name: user.name) }
+
+    it 'renders a successful response' do
+      expect(response).to be_successful
+    end
+
+    it 'renders the correct template' do
+      expect(response).to render_template('users/show')
+    end
+
+    it 'includes correct placeholder text in the response body' do
+      expect(response.body).to include('<h2>User Details</h2>')
+    end
+  end
 end
