@@ -13,7 +13,11 @@ development:
 
 test:
   <<: *default
-  database: hellorail_test
+  database: hello_test
+  username: ochieng
+  password: new_password
+  host: localhost
+  port: 5432
 
 production:
   <<: *default
