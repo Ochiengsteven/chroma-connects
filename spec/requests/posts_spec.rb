@@ -13,7 +13,7 @@ RSpec.describe 'Posts', type: :request do
 
   describe 'GET /index' do
     before do
-      user_post = create_post(user)
+      user_post = create_post(user) # rubocop:disable Lint/UselessAssignment
       get user_posts_path(user_name: user.name)
     end
 
