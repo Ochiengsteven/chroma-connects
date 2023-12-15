@@ -23,3 +23,10 @@
   max-width: 8vw;
   height: 8vh;
 }
+
+.each-post {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
