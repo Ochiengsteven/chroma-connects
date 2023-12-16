@@ -17,16 +17,18 @@
   <% post_number = 1 %>
   <% @user.recent_posts.each do |post| %>
     <div class='each-post'>
-      <h2>Post #<%= post_number %></h2>
-      <h3><%= post.title %></h3>
-      <p>
-        <%= truncate(post.text, length: 130, omission: '...') %>
-        <% if post.text.length > 20 %>
-        <% end %>
-      </p>
-      <div class='comments'>
-        <p class='number-of-comments'>Comments: <%= post.comments_counter %> Likes: <%= post.likes_counter %></p>
-      </div>
+      <%= link_to user_post_path(@user, post), class: 'post-link' do %>
+        <h2>Post #<%= post_number %></h2>
+        <h3><%= post.title %></h3>
+        <p>
+          <%= truncate(post.text, length: 130, omission: '...') %>
+          <% if post.text.length > 20 %>
+          <% end %>
+        </p>
+        <div class='comments'>
+          <p class='number-of-comments'>Comments: <%= post.comments_counter %> Likes: <%= post.likes_counter %></p>
+        </div>
+      <% end %>
     </div>
     <% post_number += 1 %>
   <% end %>

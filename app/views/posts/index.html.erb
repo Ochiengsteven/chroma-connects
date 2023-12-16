@@ -1,9 +1,9 @@
-<h1>All Posts</h1>
-
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-      <%= post.title %>
-    </li>
-  <% end %>
-</ul>
+<div class='user-container'>
+  <div class='user-photo'>
+    <%= image_tag @user.photo %>
+  </div>
+  <div class='user-infos'>
+    <p class='user-name'><%= @user.name %></p>
+    <p class='number-of-posts'>Number of posts: <%= @user.posts_counter %></p>
+  </div>
+</div>
