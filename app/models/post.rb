@@ -8,6 +8,7 @@ class Post < ApplicationRecord
   has_many :likes
 
   after_initialize :set_default_counters
+  after_create :update_user_posts_counter
 
   def recent_comments
     comments.order(created_at: :desc).limit(5)
@@ -18,5 +19,11 @@ class Post < ApplicationRecord
   def set_default_counters
     self.comments_counter ||= 0
     self.likes_counter ||= 0
+  end
+
+  def update_user_posts_counter
+    author.with_lock do
+      author.increment!(:posts_counter)
+    end
   end
 end
